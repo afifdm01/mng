@@ -51,3 +51,12 @@ thumbnails.forEach((thumb, index) => {
     showSlider();
   });
 });
+
+// slider mu tetap jalan
+// tambahin ini buat search toggle
+document.getElementById("search-btn").addEventListener("click", () => {
+    document.querySelector(".search-container").classList.toggle("active");
+    document.getElementById("search-input").focus();
+  });
+
+  

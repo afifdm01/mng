@@ -10,74 +10,77 @@
   <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Oswald:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-  <!-- Header -->
-  <header>
-    <div class="brand">ZeyyManga</div>
-    <div class="nav">
+ <!-- Header -->
+ <header>
+    <h1>Zeyy</h1>
+    <nav>
       <ul class="menu">
         <li>Home</li>
         <li>List</li>
         <li>Genres</li>
         <li>Download</li>
       </ul>
-      <div class="search">
-        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
-            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
-        </svg>
+      <!-- Search -->
+      <div class="search-container">
+        <button id="search-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"/>
+            </svg>  
+        </button>
+        <input type="text" id="search-input" placeholder="Search..." />
       </div>
-    </div>
+    </nav>
   </header>
-  
 
   <!-- Slider -->
   <div class="slider">
     <div class="list">
       <div class="item active">
-        <img src="img/1.jpg" alt="">
-        <div class="content">
-          <p>Manga</p>
+        <img src="img/aot.jpg" alt="">
+        <div class="overlay"></div>
+        <div class="info">
           <h2>Attack on Titan</h2>
           <p>Eren and his friends fight for humanity's survival behind the Walls.</p>
         </div>
       </div>
       <div class="item">
-        <img src="img/2.jpg" alt="">
-        <div class="content">
-          <p>Manga</p>
+        <img src="img/one pice.jpg" alt="">
+        <div class="overlay"></div>
+        <div class="info">
           <h2>One Piece</h2>
           <p>Luffy sets sail to become the Pirate King and find the One Piece.</p>
         </div>
       </div>
       <div class="item">
-        <img src="img/3.jpg" alt="">
-        <div class="content">
-          <p>Manga</p>
+        <img src="img/death note.jpg" alt="">
+        <div class="overlay"></div>
+        <div class="info">
           <h2>Death Note</h2>
           <p>Light Yagami discovers a notebook with the power of life and death.</p>
         </div>
       </div>
       <div class="item">
-        <img src="img/4.jpg" alt="">
-        <div class="content">
-          <p>Manga</p>
+        <img src="img/naruto.jpg" alt="">
+        <div class="overlay"></div>
+        <div class="info">
           <h2>Naruto</h2>
           <p>The journey of Naruto Uzumaki, from outcast to Hokage.</p>
         </div>
       </div>
     </div>
 
-    <!-- arrows -->
-    <div class="arrows">
-      <button id="prev"><</button>
-      <button id="next">></button>
-    </div>
+     <!-- arrows -->
+     <div class="arrows">
+        <button id="prev"><</button>
+        <button id="next">></button>
+      </div>
 
-    <!-- thumbnails -->
+    <!-- Thumbnails -->
     <div class="thumbnail">
-      <div class="item active"><img src="img/1.jpg" alt=""><div class="content">AOT</div></div>
-      <div class="item"><img src="img/2.jpg" alt=""><div class="content">One Piece</div></div>
-      <div class="item"><img src="img/3.jpg" alt=""><div class="content">Death Note</div></div>
-      <div class="item"><img src="img/4.jpg" alt=""><div class="content">Naruto</div></div>
+      <div class="item active"><img src="img/aot.jpg" alt=""></div>
+      <div class="item"><img src="img/one pice.jpg" alt=""></div>
+      <div class="item"><img src="img/death note.jpg" alt=""></div>
+      <div class="item"><img src="img/naruto.jpg" alt=""></div>
     </div>
   </div>
 

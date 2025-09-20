@@ -1,114 +1,93 @@
 body {
-    margin: 0;
-    font-family: 'Oswald', sans-serif;
-    background-color: #000;
-    color: #fff;
-    overflow-x: hidden;
-  }
-  
-  /* style */
-  header {
-    position: fixed;
-    top: 0;
-    width: 100%;
-    padding: 15px 50px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
-    z-index: 1000;
-  }
-  header .brand {
-    font-size: 2rem;
-    font-weight: bold;
-    color: #e50914;
-    font-family: 'Bangers', cursive;
-    letter-spacing: 2px;
-  }
-  header .nav {
-    display: flex;
-    align-items: center;
-    gap: 30px;
-    margin-left: auto;
-    margin-right: 6rem;
-  }
-  header .menu {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding: 15px 30px;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.8), transparent);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    header h1 {
+      font-size: 24px;
+      font-weight: bold;
+      color: red;
+    }
+
+    header nav ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    header nav ul li {
+      cursor: pointer;
+    }
+
+/* menu */
+.menu {
     list-style: none;
     display: flex;
     gap: 20px;
-    font-size: 1rem;
+    margin: 0;
+    padding: 0;
   }
-  header .menu li {
+  
+  .menu li {
     cursor: pointer;
-    text-transform: uppercase;
-    font-weight: 600;
     transition: color 0.3s;
   }
-  header .menu li:hover {
-    color: #e50914;
-  }
-  header .search {
-      cursor: pointer;
-      font-size: 1.5rem;
-}
-header .search:hover {
-      color: #e50914;
- }
   
-  /* Slider */
-  .slider {
-    height: 100vh;
-    position: relative;
-    margin-top: 0;
+  .menu li:hover {
+    color: red;
   }
-  .slider .list .item {
-    position: absolute;
-    inset: 0;
-    opacity: 0;
-    transition: opacity 0.7s ease-in-out;
-  }
-  .slider .list .item.active {
-    opacity: 1;
-    z-index: 10;
-  }
-  .slider .list .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-  }
-  .slider .list .item::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0));
-  }
-  .slider .content {
-    position: absolute;
-    left: auto;
-    right: 60px;
-    bottom: 50%;
-    transform: translateY(50%);
-    max-width: 400px;
-    text-align: right;
-    z-index: 20;
-  }
-  .slider .content p:first-child {
-    font-size: 1rem;
-    letter-spacing: 5px;
-    color: #e50914;
-    text-transform: uppercase;
-  }
-  .slider .content h2 {
-    font-family: 'Bangers', cursive;
-    font-size: 4rem;
-    margin: 10px 0;
-    text-shadow: 3px 3px 0 #000;
-  }
-  .slider .content p {
-    font-size: 1.2rem;
-    line-height: 1.5;
-  }
-  .slider .list .item::before {
+
+    /* Slider */
+    .slider {
+      position: relative;
+      height: 100vh;
+      margin-top: 60px;
+      overflow: hidden;
+    }
+
+    .slider .list {
+      position: relative;
+      height: 100%;
+    }
+
+    .slider .list .item {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+    }
+
+    .slider .list .item.active {
+      opacity: 1;
+      z-index: 10;
+    }
+
+    .slider .list .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .slider .list .item::before {
     content: '';
     position: absolute;
     left: 0;
@@ -118,8 +97,68 @@ header .search:hover {
     background: linear-gradient(to top, rgb(2, 0, 0), transparent);
     z-index: 5; 
   } 
-  
-  /* Arrows */
+
+    .overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    }
+
+    .info {
+      position: absolute;
+      bottom: 40%;
+      left: 5%;
+      max-width: 400px;
+      z-index: 20;
+    }
+
+    .info h2 {
+      font-size: 40px;
+      margin: 0 0 10px;
+    }
+
+    .info p {
+      font-size: 16px;
+      line-height: 1.4;
+    }
+
+
+    /* Thumbnails */
+    .thumbnail {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      gap: 10px;
+      padding: 20px;
+      overflow-x: auto;
+      z-index: 20;
+    }
+
+    .thumbnail .item {
+      flex-shrink: 0;
+      width: 100px;
+      height: 150px;
+      border: 2px solid transparent;
+      border-radius: 5px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s, border 0.3s;
+    }
+
+    .thumbnail .item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .thumbnail .item.active {
+      border: 2px solid red;
+      transform: scale(1.1);
+    }
+
+    /* Arrows */
   .arrows {
     position: absolute;
     top: 50%;
@@ -144,121 +183,61 @@ header .search:hover {
     color: #000;
   }
   
-  /* Thumbnails Style */
-  .thumbnail {
-    position: absolute;
-    bottom: 0;
+  /* Search */
+.search-container {
     display: flex;
-    gap: 15px;
-    width: 100%;
-    padding: 0 60px 20px 60px;
-    overflow-x: auto;
-    z-index: 50;
+    align-items: center;
+    position: relative;
   }
-  .thumbnail::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 100px;
-    background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
-    pointer-events: none;
+  
+  #search-btn {
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    color: white;
+    margin-left: 10px;
+    transition: color 0.3s;
   }
-  .thumbnail::-webkit-scrollbar {
-    height: 8px;
+  
+  #search-btn:hover {
+    color: red;
   }
-  .thumbnail::-webkit-scrollbar-thumb {
-    background: #e50914;
+  
+  #search-input {
+    width: 0;
+    opacity: 0;
+    padding: 5px 10px;
+    border: 1px solid #444;
     border-radius: 4px;
+    margin-left: 10px;
+    background: #222;
+    color: white;
+    transition: all 0.3s ease;
   }
-  .thumbnail .item {
-    flex-shrink: 0;
-    width: 100px;
-    height: 140px;
-    border-radius: 6px;
-    overflow: hidden;
-    transition: transform 0.3s, border 0.3s;
-    border: 2px solid transparent;
+  
+  #search-input:focus {
+    border-color: red;
+    outline: none;
   }
-  .thumbnail .item img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  
+  /* aktif saat muncul */
+  .search-container.active #search-input {
+    width: 180px;
+    opacity: 1;
   }
-  .thumbnail .item.active {
-    border-color: #e50914;
-    transform: scale(1.1);
-  }
-  .thumbnail .item .content {
-    text-align: center;
-    justify-content: center;
-    font-size: 0.9rem;
-    margin-top: 5px;
-    margin-left: 4rem;
-    color: #000;
-    font-weight: bold;
-  }
-  /* Responsif Tablet */
-  @media (max-width: 1024px) {
-    header {
-      padding: 10px 30px;
-    }
-    header .menu {
-      gap: 15px;
-      font-size: 0.9rem;
-    }
-    header .search {
-      font-size: 1rem;
-    }
-    .slider .content h2 {
-      font-size: 2.5rem;
-    }
-    .slider .content p {
-      font-size: 1rem;
-    }
-    .thumbnail .item {
-      width: 90px;
-      height: 120px;
-    }
-  }
+  
 
-  /* Responsif HP */
-  @media (max-width: 768px) {
-    header {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      padding: 10px 20px;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .info h2 {
+        font-size: 24px;
+      }
+      .info p {
+        font-size: 14px;
+      }
+      .thumbnail .item {
+        width: 80px;
+        height: 120px;
+      }
     }
-    header .brand {
-      font-size: 1.5rem;
-    }
-    header .menu {
-      gap: 10px;
-      font-size: 0.8rem;
-    }
-    header .search {
-      font-size: 1rem;
-    }
-    .slider .content {
-      right: 20px;
-      bottom: 40%;
-      max-width: 80%;
-      text-align: right;
-    }
-    .slider .content h2 {
-      font-size: 2rem;
-    }
-    .slider .content p {
-      font-size: 0.9rem;
-    }
-    .thumbnail {
-      padding: 0 20px 15px 20px;
-      gap: 10px;
-    }
-    .thumbnail .item {
-      width: 70px;
-      height: 100px;
-    }
-  }
